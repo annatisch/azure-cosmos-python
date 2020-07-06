@@ -1,8 +1,8 @@
 ﻿#!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import find_packages, setup
 from io import open
-import setuptools
+
 
 with open("README.md", encoding="utf-8") as f:
     README = f.read()
@@ -34,7 +34,7 @@ setup(name='azure-cosmos',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Software Development :: Libraries :: Python Modules'
       ],
-      packages=setuptools.find_packages(exclude=['test', 'test.*', 'azure', 'samples', 'samples.*', 'doc']),
+      packages=find_packages(exclude=['test', 'test.*', 'azure', 'samples', 'samples.*', 'doc']),
       extras_require={
           ':python_version<"3.0"': ['azure-nspkg'],
       },
